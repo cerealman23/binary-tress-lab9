@@ -16,9 +16,30 @@ class tree {
 
     // binary search value x in tree rooted at node t
     bool treeBSearch(V x, TreeNode<V>* t){
+      
+      if (!t) {
+	return false;
+      }
+      V data = t->getDatum();
 
-      // implement this method
-      return false;
+      if (x == data) {
+
+	return true;
+	
+      } else {
+	
+	
+      if (x > data) {
+	return treeBSearch(x, t->getRight());
+      }else  {
+	return treeBSearch(x, t->getLeft());
+      }
+
+      
+
+      }
+
+      
     }
     
     // binary search value x in tree
@@ -28,13 +49,19 @@ class tree {
     
     // check node t is leaf
     bool isLeaf(TreeNode<V>* t){
+
+      return !t->getLeft() && !t->getRigh();
       //implement this method
-      return false;
+      
     }
     
     // find the height of the tree rooted at node t
     int height(TreeNode<V>* t){
       //implement this method
+
+
+      
+      
       return 0;
     }
     
@@ -43,13 +70,32 @@ class tree {
     }
     
     // find the number of nodes of tree rooted at t
-    int nNodes(TreeNode<V>* t){
+  int nNodes(TreeNode<V>* t){
       //implement this method
-      return 0;
+
+    int count = ;
+    if (t->getRight()) {
+	
+      count += nNodes(t->getRight());
+
+      }
+
+    if (t->getLeft()) {
+      
+      count += nNodes(t->getLeft());
+
+    }
+      
+    return count;
+
+    
     }
     
     int nNodes(){
-        return nNodes(root);
+
+      int count = 0;
+      
+      return nNodes(root);
     }
 
     // insert value x to the current tree object
@@ -64,7 +110,8 @@ class tree {
 	if (!node->getLeft()) {
 
 	  node->setLeft(new TreeNode<V>(x, nullptr, nullptr));
-	  
+	  size++;
+
 	  return;
 	}
 	  
@@ -76,6 +123,7 @@ class tree {
 
         if (!node->getRight()) {
 
+	  size++;
 	  node->setRight(new TreeNode<V>(x, nullptr, nullptr));
 	  
 	  return;
@@ -93,7 +141,8 @@ class tree {
       // implement this method
 
       root = !root ? new TreeNode<V>(x, nullptr, nullptr) : root;
-      
+      size += !root ? 1 : 0;
+
       insertBTree(x, root);
       
     }

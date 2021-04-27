@@ -12,9 +12,9 @@ int main(){
     myTree.insert(7);
     myTree.insert(9);
     
-    //cout << myTree.treeBSearch(9) << endl;
-    // cout << myTree.treeBSearch(11) << endl;
-    // cout << "Number of nodes: " << myTree.nNodes() << endl;
+    cout << myTree.treeBSearch(9) << endl;
+    cout << myTree.treeBSearch(11) << endl;
+    cout << "Number of nodes: " << myTree.nNodes() << endl;
     
     // cout << "Inorder Traversal: " << endl;
     // myTree.traverseInorder();
