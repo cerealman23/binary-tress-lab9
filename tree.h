@@ -54,15 +54,53 @@ class tree {
       //implement this method
       
     }
+
+  int height(TreeNode<V>* t, TreeNode<V>* v) {
+
+      if (!t->getRight() && !t->getLeft()) {
+	
+	return 0;
+
+      }
+
+      
+    int count = 1;
+    if (t->getRight()) {
+	
+      count += nNodes(t->getRight());
+
+      }
+
+    if (t->getLeft()) {
+      
+      count += nNodes(t->getLeft());
+
+    }
+      
+    return height();
+
+  }
     
     // find the height of the tree rooted at node t
     int height(TreeNode<V>* t){
       //implement this method
 
+      if (!t->getRight() && !t->getLeft()) {
+	
+	return 0;
+
+      }
 
       
+      int lmax = height(t->getLeft()) + 1;
+      int rmax = height(t->getLeft()) + 1;
+
+      if (lmax > rmax) {
+	return lmax;
+      } else {
+	return rmax;
+      }
       
-      return 0;
     }
     
     int height(){
@@ -73,7 +111,7 @@ class tree {
   int nNodes(TreeNode<V>* t){
       //implement this method
 
-    int count = ;
+    int count = 1;
     if (t->getRight()) {
 	
       count += nNodes(t->getRight());
