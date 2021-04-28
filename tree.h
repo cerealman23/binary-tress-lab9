@@ -159,7 +159,6 @@ class tree {
       insertBTree(x, root);
       
     }
-
     
     void traverseInorder(TreeNode<V> *x)
     {
