@@ -31,18 +31,14 @@ class tree {
 	return true;
 	
       } else {
-	
-	
-      if (x > data) {
-	return treeBSearch(x, t->getRight());
-      }else  {
-	return treeBSearch(x, t->getLeft());
-      }
-
-      
+		
+	if (x > data) {
+	  return treeBSearch(x, t->getRight());
+	}else  {
+	  return treeBSearch(x, t->getLeft());
+	}
 
       }
-
       
     }
     
@@ -89,24 +85,23 @@ class tree {
     }
   
     // find the number of nodes of tree rooted at t
-  int nNodes(TreeNode<V>* t){
+    int nNodes(TreeNode<V>* t){
       //implement this method
 
-    int count = 1;
-    if (t->getRight()) {
+      int count = 1;
+      if (t->getRight()) {
 	
-      count += nNodes(t->getRight());
+	count += nNodes(t->getRight());
 
       }
 
-    if (t->getLeft()) {
+      if (t->getLeft()) {
       
-      count += nNodes(t->getLeft());
+	count += nNodes(t->getLeft());
 
-    }
+      }
       
-    return count;
-
+      return count;
     
     }
     
@@ -115,6 +110,7 @@ class tree {
       int count = 0;
       
       return nNodes(root);
+      
     }
 
     // insert value x to the current tree object
@@ -132,13 +128,12 @@ class tree {
 	  size++;
 
 	  return;
+	  
 	}
 	  
 	  insertBTree(x, node->getLeft());
 	  
       } if (x > node->getDatum()) {
-
-	
 
         if (!node->getRight()) {
 
@@ -146,15 +141,14 @@ class tree {
 	  node->setRight(new TreeNode<V>(x, nullptr, nullptr));
 	  
 	  return;
+	  
         }
 	
 	insertBTree(x, node->getRight());
 
       }
-
       
     }
-    
   
     void insert(V x){
       // implement this method
@@ -169,12 +163,15 @@ class tree {
     
     void traverseInorder(TreeNode<V> *x)
     {
-        if (x == nullptr)
-            return;
-        traverseInorder(x->getLeft());
-        cout << x->getDatum() << " ";
-        traverseInorder(x->getRight());
+      
+      if (x == nullptr)
+          return;
+      traverseInorder(x->getLeft());
+      cout << x->getDatum() << " ";
+      traverseInorder(x->getRight());
+      
     }
+  
     void traverseInorder()
     {
         traverseInorder(root);
@@ -188,6 +185,7 @@ class tree {
         traversePreorder(x->getLeft());
         traversePreorder(x->getRight());
     }
+  
     void traversePreorder(){
         traversePreorder(root);
         cout<<endl;
