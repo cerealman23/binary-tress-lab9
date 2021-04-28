@@ -1,6 +1,10 @@
 #include "treeNode.h"
 #include <iomanip>
 
+// Malcolm Kahora
+// CSC-230-01
+// Lab 9
+
 template <class V>
 class tree {
     TreeNode<V> * root;
@@ -54,49 +58,23 @@ class tree {
       //implement this method
       
     }
-
-  int height(TreeNode<V>* t, TreeNode<V>* v) {
-
-      if (!t->getRight() && !t->getLeft()) {
-	
-	return 0;
-
-      }
-
-      
-    int count = 1;
-    if (t->getRight()) {
-	
-      count += nNodes(t->getRight());
-
-      }
-
-    if (t->getLeft()) {
-      
-      count += nNodes(t->getLeft());
-
-    }
-      
-    return height();
-
-  }
     
     // find the height of the tree rooted at node t
     int height(TreeNode<V>* t){
       //implement this method
 
+      if (!t) {
+	return -1;
+      }
+      
       if (!t->getRight() && !t->getLeft()) {
 	
 	return 0;
 
       }
-
-      // wow what a weirdo make a a mess
-      // what a loser
-      // what a friken loser
-      // what the heck man what the frick
+      
       int lmax = height(t->getLeft()) + 1;
-      int rmax = height(t->getLeft()) + 1;
+      int rmax = height(t->getRight()) + 1;
 
       if (lmax > rmax) {
 	return lmax;
@@ -109,7 +87,7 @@ class tree {
     int height(){
         return height(root);
     }
-  // commit test
+  
     // find the number of nodes of tree rooted at t
   int nNodes(TreeNode<V>* t){
       //implement this method

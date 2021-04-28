@@ -16,13 +16,12 @@ int main(){
     cout << myTree.treeBSearch(11) << endl;
     cout << "Number of nodes: " << myTree.nNodes() << endl;
     
-    // cout << "Inorder Traversal: " << endl;
-    // myTree.traverseInorder();
-    // cout << "Preorder Traversal: " << endl;
-    // myTree.traversePreorder();
-    // cout << "Postorder Traversal: " << endl;
+    cout << "Inorder Traversal: " << endl;
+    myTree.traverseInorder();
+    cout << "Preorder Traversal: " << endl;
     myTree.traversePreorder();
+    cout << "Postorder Traversal: " << endl;
+    myTree.traversePostorder();
 
     
-
 }
