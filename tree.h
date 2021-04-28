@@ -91,7 +91,10 @@ class tree {
 
       }
 
-      
+      // wow what a weirdo make a a mess
+      // what a loser
+      // what a friken loser
+      // what the heck man what the frick
       int lmax = height(t->getLeft()) + 1;
       int rmax = height(t->getLeft()) + 1;
 
